@@ -7,32 +7,26 @@
 </template>
 
 <script>
+
 export default {
-  name: 'NavBar',
-  props:['title']
+  name: "NavBar"
 }
 </script>
 
 <style>
-.nav-bar {
-  width: 100%;
-  line-height: 44px;
-  height: 44px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  font-size: 20px;
-  color: white;
-  text-align: center;
-}
+  .nav-bar {
+    display: flex;
+    line-height: 44px;
+    height: 44px;
+    text-align: center;
+    box-shadow: 0 1px 1px rgba(100, 100, 100, .1);
+  }
 
-.left,.right {
-  width: 60px;
-  height: 44px;
-}
+  .left,.right {
+    width: 60px;
+  }
 
-.center {
-  flex: 1;
-  height: 44px;
-}
+  .center {
+    flex: 1;
+  }
 </style>

@@ -1,68 +1,43 @@
 <template>
-   <tab-bar>
-      <tab-bar-item path="/home">
-        <template v-slot:item-icon>
-          <img src="~assets/img/tabbar/1.png" alt="">
-        </template>
-        <template v-slot:item-icon-active>
-          <img src="~assets/img/tabbar/1active.png" alt="">
-        </template>
-        <template v-slot:item-text>
-          <div>首页</div>
-        </template>
+  <tab-bar class="tab-bar">
+      <tab-bar-item path="/home" activeColor="deepPink">
+         <img slot="item-icon" src="~assets/img/tabbar/1.png" alt="">
+         <img slot="item-icon-active" src="~assets/img/tabbar/1active.png" alt="">
+        <div slot="item-text">首页</div>
       </tab-bar-item>
-
-      <tab-bar-item path="/categoty">
-        <template v-slot:item-icon>
-          <img src="~assets/img/tabbar/2.png" alt="">
-        </template>
-        <template v-slot:item-icon-active>
-          <img src="~assets/img/tabbar/2active.png" alt="">
-        </template>
-        <template v-slot:item-text>
-          <div>分类</div>
-        </template>
-      </tab-bar-item>  
-
-      <tab-bar-item path="/cart">
-        <template v-slot:item-icon>
-          <img src="~assets/img/tabbar/3.png" alt="">
-        </template>
-        <template v-slot:item-icon-active>
-          <img src="~assets/img/tabbar/3active.png" alt="">
-        </template>
-        <template v-slot:item-text>
-          <div>购物车</div>
-        </template>
-      </tab-bar-item> 
-      
-      <tab-bar-item path="/profile">
-        <template v-slot:item-icon>
-          <img src="~assets/img/tabbar/4.png" alt="">
-        </template>
-        <template v-slot:item-icon-active>
-          <img src="~assets/img/tabbar/4active.png" alt="">
-        </template>
-        <template v-slot:item-text>
-          <div>我的</div>
-        </template>
-      </tab-bar-item> 
+      <tab-bar-item path="/category" activeColor="deepPink">
+        <img slot="item-icon" src="~assets/img/tabbar/2.png" alt="">
+        <img slot="item-icon-active" src="~assets/img/tabbar/2active.png" alt="">
+        <div slot="item-text">分类</div>
+      </tab-bar-item>
+      <tab-bar-item path="/cart" activeColor="deepPink">
+        <img slot="item-icon" src="~assets/img/tabbar/3.png" alt="">
+        <img slot="item-icon-active" src="~assets/img/tabbar/3active.png" alt="">
+        <div slot="item-text">购物车</div>
+      </tab-bar-item>
+      <tab-bar-item path="/profile" activeColor="deepPink">
+        <img slot="item-icon" src="~assets/img/tabbar/4.png" alt="">
+        <img slot="item-icon-active" src="~assets/img/tabbar/4active.png" alt="">
+        <div slot="item-text">我的</div>
+      </tab-bar-item>
     </tab-bar>
 </template>
 
 <script>
-import TabBar from 'components/common/tabbar/TabBar.vue'
-import TabBarItem from 'components/common/tabbar/TabBarItem'
+import TabBar from "components/common/tabbar/TabBar"
+import TabBarItem from "components/common/tabbar/TabBarItem"
 
 export default {
-  name: 'mainTabBar',
+  name: "MainTabBar",
   components: {
-    TabBar, 
+    TabBar,
     TabBarItem
-  },
+  }
 }
 </script>
 
 <style>
-
+  .tab-bar {
+    z-index: 999;
+  }
 </style>

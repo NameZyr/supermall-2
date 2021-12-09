@@ -1,25 +1,15 @@
 <template>
-  <div>
-    <NavBar>
-      <template v-slot:center>
-        <div>
-          购物车(0)
-        </div>
-      </template>
-    </NavBar>
-  </div>
+  <h2>
+    购物车
+  </h2>
 </template>
 
 <script>
-import NavBar from 'components/common/navbar/NavBar.vue'
 export default {
-  name: 'cart',
-  components: {
-    NavBar
-  }
+  name: "Cart"
 }
 </script>
 
 <style>
-
+  
 </style>
