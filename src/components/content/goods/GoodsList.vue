@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import GoodsListItem from '../../../../../../vue/supermall/src/components/content/goods/GoodsListItem.vue'
+import GoodsListItem from './GoodsListItem.vue'
 export default {
   components: { GoodsListItem },
   name: 'GoodsList',
@@ -23,11 +23,20 @@ export default {
 <style>
 .goods {
   width: 100%;
+  overflow: scroll;
+  padding: 5px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   text-align: center;
-  font-size: 12px;
+  font-size: 14px; 
+   /* -moz-column-count:2; 
+     -webkit-column-count:2; 
+    column-count:2;
+    -moz-column-gap: 10px;
+    -webkit-column-gap: 10px;
+    column-gap: 10px;
+　　display:inline-block; */
 }
 
 

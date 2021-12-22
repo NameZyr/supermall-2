@@ -2,7 +2,7 @@
   <Swiper>
     <SwiperItem v-for="item in image">
       <a :href="item.link">
-        <img :src="item.image" alt="">
+        <img :src="item.image" alt="" @load="imageLoad">
       </a>
     </SwiperItem>
   </Swiper>
@@ -33,7 +33,16 @@ export default {
         {id:1, link:'https://www.bilibili.com/read/mobile?id=13260453&from=search&spm_id_from=333.337.0.0', image:'https://i0.hdslb.com/bfs/article/6c526b129e77fcffda923f17740f6373ff7f3b07.png@686w_380h_progressive.webp'},
         {id:1, link:'https://www.bilibili.com/read/mobile?id=13260453&from=search&spm_id_from=333.337.0.0', image:'https://i0.hdslb.com/bfs/article/a251ee38827bf1090be7abf758e616fa8e343ead.png@686w_380h_progressive.webp'},
         {id:1, link:'https://www.bilibili.com/read/mobile?id=13260453&from=search&spm_id_from=333.337.0.0', image:'https://i0.hdslb.com/bfs/article/542e72d60a03170a1b9d1b8934f1ed1c00d72559.png@686w_380h_progressive.webp'},
-      ]
+      ],
+      isLoad:false
+    }
+  },
+  methods: {
+    imageLoad() {
+      if (!this.isLoad) {
+        this.$emit('swiperImageLoad')
+        this.isLoad = true
+      }
     }
   },
 }

@@ -120,7 +120,17 @@ export default {
   },
   mounted() {
     this.scroll = new BScroll('.wrapper', {
-      
+      probeType:3,
+      click:true,
+      pullUpLoad:true,
+    })
+
+    this.scroll.on('scroll', (position) => {
+      // console.log(position);
+    })
+
+    this.scroll.on('pullingUp', () => {
+      console.log('nixx');
     })
   },
 }
@@ -130,8 +140,8 @@ export default {
   .wrapper {
     height: 150px;
     background-color: red;
-
-    /* overflow: hidden; */
+    
+    overflow: hidden;
     /* overflow-y: scroll; */
   }
 </style>

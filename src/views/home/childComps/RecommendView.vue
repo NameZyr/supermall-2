@@ -27,7 +27,8 @@ export default {
         {id:2, link:'https://www.bilibili.com/video/BV1Th411y7XE?from=search&seid=262805027891451123&spm_id_from=333.337.0.0', title:'嘉然的狗', image:'https://i0.hdslb.com/bfs/article/40608ab535fa8d3cc670ce51da8eaa07d8f2ac6a.png@777w_777h_progressive.webp'},
         {id:3, link:'https://www.bilibili.com/video/BV1Th411y7XE?from=search&seid=262805027891451123&spm_id_from=333.337.0.0', title:'嘉然的猫', image:'https://i0.hdslb.com/bfs/article/3afd4252d73a7937f940e34c5b4dcb81cd61ee8d.jpg@768w_768h_progressive.webp'},
         {id:4, link:'https://www.bilibili.com/video/BV1864y197od?from=search&seid=6522378637062267790&spm_id_from=333.337.0.0', title:'嘉然为什么是神？', image:'https://i0.hdslb.com/bfs/article/f02e87879742f297e3f5eeae0a7af6eb5c5d3a79.jpg@942w_896h_progressive.webp'},
-      ]
+      ],
+      isLoad:false
     }
   },
 }

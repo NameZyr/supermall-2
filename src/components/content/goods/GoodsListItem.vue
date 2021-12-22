@@ -1,9 +1,13 @@
 <template>
-  <div class="goods-item">
-    <img :src="item.show.img" alt="">
-    <p class="title">{{item.title}}</p>
-    <div class="price">{{item.price}}</div>
-    <span> <img src="~assets/img/common/collect.svg" alt="">{{item.cfav}}</span>
+  <div class="goods-item" @click="itemClick()">
+    <img v-lazy="showImage" alt="" @load="imageLoad">
+    <p class="title">{{goodsItem.title}}</p>
+    <div>
+      <!-- <div class="price">{{goodsItem.price}}</div> -->
+      <img src="~assets/img/common/collect.svg" alt="">
+      <span class="Collection">{{goodsItem.cfav}}</span>
+    </div>
+    
   </div>
 </template>
 
@@ -17,7 +21,20 @@ export default {
         return {}
       }
     }
-  }
+  },
+  computed: {
+    showImage() {
+      return this.goodsItem.image || this.goodsItem.show.img
+    }
+  },
+  methods: {
+    imageLoad () {
+      this.$bus.$emit('itemImageLoad')
+    },
+    itemClick() {
+      this.$router.push('/detail' + this.goodsItem.iid)
+    }
+  },
 }
 </script>
 
@@ -25,6 +42,9 @@ export default {
 .goods-item {
   width: 48%;
   margin: 6px 0 3px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  line-height: 100%;
 }
 
 .goods-item p {
@@ -47,6 +67,21 @@ export default {
 .goods-item img {
   display: block;
   width: 100%;
-  border-radius: 5px;
+  
+}
+
+.goods-item div {
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+
+
+
+.goods-item div img{
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  margin-left: 3px;
 }
 </style>
